@@ -4,12 +4,7 @@ from time import sleep
 from selenium.webdriver.support import expected_conditions as EC
 
 
-@then('Click on Secondary option at the left side menu')
-def click_secondary_option(context):
-    context.app.secondary_page.open_secondary()
-
-
-@then('Verify the right page opens')
+@then('Verify the secondary page opens')
 def verify_secondary_page_url(context):
     context.app.secondary_page.confirm_url()
 
