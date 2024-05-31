@@ -5,9 +5,10 @@ from pages.base_page import Page
 class SecondaryPage(Page):
     CLICK_FINAL_PAGE = (By.CSS_SELECTOR, 'a[wized="nextPageMLS"]')
     RETURN_TO_FIRST_PAGE = (By.CSS_SELECTOR, '[wized="previousPageMLS"]')
+    SECONDARY_PAGE = (By.CSS_SELECTOR, 'a[href*="/secondary-listings"]')
 
     def open_secondary(self):
-        self.driver.find_element(By.CSS_SELECTOR, 'a[href*="/secondary-listings"]').click()
+        self.driver.find_element(*self.SECONDARY_PAGE).click()
 
     def confirm_url(self,*locator):
         current_url = self.driver.current_url
